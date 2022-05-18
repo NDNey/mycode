@@ -17,6 +17,6 @@ def main():
     shutil.move('ceph_storage/kerrigan.obj', 'ceph_storage/' + xname)  # moving kerrigan.obj into
                                                                        # ceph_storage/ with new name
 
-
-main() # this calls our main function
+if __name__ == "__main__":
+    main() # this calls our main function
 
