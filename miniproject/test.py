@@ -16,7 +16,7 @@ def getAnswers():
         for index in range(len(ask["answers"])):
             print(index + 1, ask["answers"][index])
 
-        answer = input("Plese select a number 1 - 4 n\answer: \n> ")
+        answer = input("Plese select your answer by it's number 1-4 n\answer:\n> ")
 
         if answer.isdigit():
             while int(answer) not in range(1, 5):
@@ -35,7 +35,7 @@ def getHero():
     heroIndex = int(answers/len(test)) - 1
     hero = heroes[heroIndex]
 
-    print("We Know Which Avenger Matches Your Personality Based On The TV Shows You Pick")
+    print("\nWe Know Which Avenger Matches Your Personality Based On The TV Shows You Pick\n")
     print(CGREEN + hero["alias"] + CGREENEND)
     print(hero["description"])
     printPicture(heroIndex)
