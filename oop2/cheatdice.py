@@ -31,3 +31,10 @@ class Cheat_Loaded_Dice(Player): # inheritance of Player
               self.dice[i] += 1
           i += 1
 
+class Cheat_Try(Player):
+    def cheat(self):
+        i = 0
+        while i < len(self.dice):
+          if self.dice[i] < 3:
+              self.dice.append(randint(3,6))
+          i += 1
