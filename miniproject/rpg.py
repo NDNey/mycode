@@ -25,6 +25,7 @@ def showStatus():
     # print the player's current status
     print('---------------------------')
     print('You are in the ' + currentRoom)
+    print('Room description: ' + rooms[currentRoom]['description'])
     # print the current inventory
     print('Inventory : ' + str(inventory))
     # print an item if there is one
@@ -39,29 +40,33 @@ inventory = []
 # a dictionary linking a room to other rooms
 # A dictionary linking a room to other rooms
 rooms = {
-
     'Hall': {
         'south': 'Kitchen',
         'east': 'Dining Room',
-        'item': 'key'
+        'item': 'key',
+        'description': 'This is a really beautiful hall you will see the kitchen to the south and the Dining Room to the east'
     },
-
     'Kitchen': {
         'north': 'Hall',
         'item': 'monster',
+        'description': 'Be carful there is a Monster somewhere in the kitchen'
     },
     'Dining Room': {
         'west': 'Hall',
         'south': 'Garden',
         'item': 'potion',
         'north': 'Pantry',
+        'description': 'There is really powerful potion in this room. From here you can go to the hall, the garden or the pantry'
     },
     'Garden': {
-        'north': 'Dining Room'
+        'north': 'Dining Room',
+        'east': 'Maze',
+        'description': 'This beautiful garden has a maze. Be careful you do not want to get trap in there'
     },
     'Pantry': {
         'south': 'Dining Room',
         'item': 'cookie',
+        'description': 'There is not much in this room but you can get some cookies if you look around'
     }
 }
 
@@ -134,8 +139,6 @@ while True:
         print(monster_attack())
         sleep(10)
         response = input("\nDid the monster make you laugh?[y/n]\n> ")
-
- 
 
         while response != "y" and response != "n":
             response = input("plese answer [y/n] if you find the joke funny\n> ")
