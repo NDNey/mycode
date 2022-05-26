@@ -7,7 +7,14 @@
     <title>Flask Challenge</title>
 </head>
 <body>
-    <h3>Which country produces the most coffee in the world?</h3>
+    <h1>{{ question }}</h1>
+    <h4>options:</h4>
+    <ul>
+        {% for answer in choices %}
+        <li>{{answer}}</li>
+        {% endfor %}
+        <li>{{answer}}</li>
+    </ul>
     <form action = "/answer" method = "POST">
         <h5>Enter Answer:</h5>
         <input type = "text" name = "answer">
