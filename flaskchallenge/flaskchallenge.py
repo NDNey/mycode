@@ -37,9 +37,6 @@ def main():
     except Exception as err:
         f"Uh-oh! {err}"
    
-
-
-
 @app.route("/answer", methods = ["POST"])
 def answered():
 
