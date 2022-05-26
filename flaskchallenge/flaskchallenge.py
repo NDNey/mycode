@@ -25,7 +25,6 @@ def login():
     if request.method == "POST":
         if request.form.get("answer").lower() == 'brazil': 
             return redirect(url_for("correct"))
-            user = request.form.get("answer") 
         else: 
             return redirect(url_for("main"))
    
