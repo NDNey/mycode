@@ -8,6 +8,7 @@ data = requests.get(URL).json()
 
 print("this is an encyclopedia:")
 for item in data:
-
+    print("===============================================")
     print(f"*Entry Creator : {item['user']} ")
     print(f"*{item['entry']} : {item['definition']}")
+    print("===============================================")
