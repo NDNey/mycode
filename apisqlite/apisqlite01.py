@@ -82,10 +82,11 @@ def main():
             searchstring = input("Search all movies in the OMDB. Enter search string: ")
 
             if answer == "1":
+                
                 resp = movielookup(mykey, searchstring)
             elif answer == "2":
-                print("\nSearch by type coming soon!\n") # maybe you can write this code!
-                continue                                 # restart the while loop
+                searchstring =  searchstring+ "&type="+ searchstring
+                resp = movielookup(mykey, searchstring)
             if resp:
                 # display the results
                 resp = resp.get("Search")

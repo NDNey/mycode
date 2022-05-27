@@ -30,7 +30,6 @@ def trivia():
 
 @app.route("/") 
 def main():
-    
     try:
         triviadata = trivia()
         return render_template("index.html", **triviadata) 
