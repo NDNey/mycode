@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""Alta3 APIs and HTML"""
 
-## best practice says don't use commas in imports
-# use a single line for each import
- 
 from flask import session
 from flask import Flask
 from flask import redirect
