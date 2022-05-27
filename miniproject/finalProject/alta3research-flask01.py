@@ -27,7 +27,10 @@ app.secret_key = "any random string"
 @app.route("/")
 def main():
     try:
-        return render_template("profile.html", entries=data, user=session["username"])
+        if(session["username"]):
+            return render_template("profile.html", entries=data, user=session["username"])
+        else:
+            return render_template("profile.html", entries=data)
     except Exception as err:
         f"Uh-oh! {err}"
 
