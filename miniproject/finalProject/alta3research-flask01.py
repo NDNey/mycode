@@ -26,8 +26,8 @@ app.secret_key = "any random string"
 
 @app.route("/")
 def main():
-
-    if(session["username"]):
+    
+    if "username" in session:
         return render_template("profile.html", entries=data, user=session["username"])
     else:
         return render_template("profile.html", entries=data)
