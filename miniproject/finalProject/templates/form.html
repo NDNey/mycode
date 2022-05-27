@@ -1,19 +1,33 @@
 {% include 'index.html' %}
- 
+{% if user %}
 <div class="form-box">
     <h1>New Entry</h1>
     <p>Enter a new CS topic and it's definition</p>
     <form action="/newEntry" method="post">
       <div class="form-group">
         <label for="name">Entry</label>
-        <input class="form-control" id="name" type="text" name="entry">
+        <input class="form-control" id="entry" type="text" name="entry" required>
       </div>
       <div class="form-group">
         <label for="message">Definition</label>
-        <textarea class="form-control" id="message" name="definition"></textarea>
+        <textarea class="form-control" id="message" name="definition" required></textarea>
       </div>
       <input class="btn btn-primary" type="submit" value="Submit" />
       </div>
     </form>
 </div>
+{% else %}
+<div class="form-box">
+  <h1>Your Name</h1>
+  <p>Enter your name to start creating new entries</p>
+  <form action="/user" method="post">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input class="form-control" id="name" type="text" name="name" required>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit" />
+    </div>
+  </form>
+</div>
+{% endif %}
  

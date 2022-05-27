@@ -1,5 +1,7 @@
 {% include 'index.html' %}
- 
+
+{% if user %}
+<h2>Your Entries</h2>
 <div class="container">
   <table class="table table-striped ">
     <thead>
@@ -12,15 +14,22 @@
     <tbody>
    
       {% for entry in entries %}
-   
+      {% if user == entry["user"] %}
       <tr>
         <th scope="row">{{loop.index}}</th>
         <td class="col-md-3">{{entry["entry"]}}</td>
         <td class="col-md-6">{{entry["definition"]}}</td>
      
       </tr>
+      {% endif %}
       {% endfor %}
     </tbody>
   </table>
 </div>
- 
+
+{% else %}
+
+<section class="container">
+  In this app you can start building your own online encyclopedia with all the terms and definitions you need to remember. You will also be able to see the posts of other users and search through all the content.
+</section>
+{% endif %}
